@@ -1,48 +1,37 @@
-import { type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
+import { bioData } from "./bioData";
+import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
 
 const Bio = () => {
-  const edu = [
-    "Ph.D. Psychology",
-    "M.Sc. Cognitive Neuroscience",
-    "B.Sc. Cognitive Neuroscience",
-    "High School: Math and Computer Science",
-  ];
-  const programmingLaguages = [
-    "Typescript",
-    "JavaScript",
-    "Python",
-    "Matlab",
-    "R",
-  ];
   return (
-    <section className="flex flex-col gap-20">
-      <article>
-        <h1 className="text-xl">About me</h1>
+    <section className="flex w-full flex-col gap-10 md:gap-20">
+      <article className="flex flex-col items-center">
+        <h1 className="text-center text-2xl text-sky-950">About me</h1>
         <p>
           Good day, I&apos;m{" "}
           <strong className="font-semibold">Rasmus Eklund</strong>, a former
           researcher in Psychology and now Fullstack Webdeveloper.
         </p>
       </article>
-      <Article title="Skills">
-        <h3>Programming languages</h3>
-        <ul className="flex flex-wrap gap-1">
-          {programmingLaguages.map((lang) => (
-            <li className="bg-sky-300 p-1" key={lang}>
-              {lang}
-            </li>
-          ))}
-        </ul>
-      </Article>
-      <Article title="Education">
-        <ul>
-          {edu.map((i) => (
-            <li key={i} className="flex items-center gap-1">
-              <EducationIcon className="size-6" /> <span>{i}</span>
-            </li>
-          ))}
-        </ul>
-      </Article>
+      <div className="flex flex-col gap-10 md:flex-row md:gap-20">
+        <Article title="Skills">
+          <h3 className="font-bold">Programming languages</h3>
+          <Expandable items={bioData.programmingLaguages} />
+          <h3 className="font-bold">Tech</h3>
+          <Expandable items={bioData.tech} />
+        </Article>
+        <Article title="Education">
+          <ul>
+            {bioData.edu.map((item) => (
+              <li key={item} className="flex items-center gap-1">
+                <EducationIcon className="size-6" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </Article>
+      </div>
     </section>
   );
 };
@@ -61,6 +50,31 @@ const Article = ({
     <div className="space-y-2 p-2">{children}</div>
   </article>
 );
+
+const Expandable = ({ items }: { items: string[] }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <ul className="flex flex-wrap gap-2">
+      {items.map((item, i) => (
+        <li
+          className={cn(
+            `flex h-8 items-center bg-sky-300 px-2 py-1 transition-all duration-300 ${!open && i > 3 ? "hidden" : ""}`,
+          )}
+          key={item}
+        >
+          {item}
+        </li>
+      ))}
+      <Button
+        className="h-8"
+        variant="ghost"
+        onClick={() => setOpen((p) => !p)}
+      >
+        {open ? "show less" : "show more"}
+      </Button>
+    </ul>
+  );
+};
 
 const EducationIcon = ({ className }: { className?: string }) => (
   <svg
