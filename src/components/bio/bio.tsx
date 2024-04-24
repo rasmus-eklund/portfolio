@@ -43,7 +43,7 @@ const Article = ({
   title: string;
   children: ReactNode;
 }) => (
-  <article className="flex flex-col rounded-b-lg rounded-t-xl bg-sky-200/20">
+  <article className="flex flex-col rounded-b-lg rounded-t-xl bg-sky-200/20 md:w-1/2">
     <h2 className="rounded-t-lg bg-sky-400 py-1 pl-5 text-xl text-sky-950">
       {title}
     </h2>
