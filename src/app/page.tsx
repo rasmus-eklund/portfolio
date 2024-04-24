@@ -15,10 +15,12 @@ const Home = () => {
   return (
     <main
       ref={main}
-      className="no-scrollbar relative flex max-w-5xl grow flex-col items-center gap-52 overflow-y-auto py-16 px-2"
+      className="no-scrollbar relative flex max-w-5xl grow flex-col items-center gap-6 overflow-y-auto px-2 py-16 md:gap-16"
     >
       <Header />
+      <Separator />
       <Bio />
+      <Separator />
       <Projects />
 
       <Button
@@ -33,4 +35,7 @@ const Home = () => {
   );
 };
 
+const Separator = () => (
+  <div className="h-[1px] w-full shrink-0 bg-sky-950/40" />
+);
 export default Home;
