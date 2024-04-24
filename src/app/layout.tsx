@@ -1,14 +1,14 @@
-import type { Metadata } from 'next';
-import { Exo_2 } from 'next/font/google';
-import './globals.css';
-import Navbar from '@/components/nav/nav';
-import Footer from '@/components/footer/footer';
+import type { Metadata } from "next";
+import { Exo_2 } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/nav/nav";
+import Footer from "@/components/footer/footer";
 
-const inter = Exo_2({ subsets: ['latin'] });
+const inter = Exo_2({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Rasmus Eklund',
-  description: 'Rasmus Eklund portfolio',
+  title: "Rasmus Eklund",
+  description: "Rasmus Eklund portfolio",
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-gradient-to-b from-sky-900 via-sky-300 to-sky-900 ${inter.className} flex h-screen flex-col`}
+        className={`bg-gradient-to-b from-sky-900 via-sky-300 to-sky-900 ${inter.className} flex h-screen flex-col items-center`}
       >
         <Navbar />
         {children}
