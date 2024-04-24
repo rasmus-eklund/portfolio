@@ -1,0 +1,61 @@
+const edu = [
+  "Ph.D. Psychology",
+  "M.Sc. Cognitive Neuroscience",
+  "B.Sc. Cognitive Neuroscience",
+  "High School: Math and Computer Science",
+];
+const programmingLaguages = [
+  "Typescript",
+  "JavaScript",
+  "Python",
+  "Matlab",
+  "R",
+];
+const tech = [
+  "HTML",
+  "Node.js",
+  "Next.js",
+  "React.js",
+  "CSS",
+  "Tailwind",
+  "Express",
+  "React Query",
+  "NextAuth",
+  "D3",
+  "zod",
+  "tRPC",
+  "Prisma",
+  "Drizzle",
+  "Mongoose",
+  "Jest",
+  "Mocha",
+  "Cypress",
+  "React Testing Library",
+  "web3",
+  "Ethers.js",
+  "viem",
+  "hardhat",
+  "Django",
+  "Flask",
+  "Numpy",
+  "Pandas",
+  "MNE",
+  "Psychopy",
+  "Git",
+  "GitHub",
+  "REST",
+  "Docker",
+  "Meilisearch",
+];
+
+const databases = [
+  "Postgresql",
+  "MongoDB",
+  "Mysql",
+  "sqlite",
+  "Cosmos",
+  "Supabase",
+  "Fly.io",
+];
+
+export const bioData = { edu, programmingLaguages, tech, databases };
