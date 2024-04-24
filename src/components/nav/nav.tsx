@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
 const Navbar = () => {
   return (
-    <nav className="flex gap-10 p-5 border-b-sky-950 border-b-2 rounded-b-md shadow-lg bg-sky-200">
+    <nav className="flex w-full gap-10 rounded-b-md border-b-2 border-b-sky-950 bg-sky-200 p-5 shadow-lg">
       <ul>
         <li className="bg-">
           <a href=""></a>
