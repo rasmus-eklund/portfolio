@@ -10,9 +10,7 @@ const Header = () => {
         width={256}
         priority
       />
-      <h1 className="text-xl text-sky-950">
-        Hello and welcome to my portfolio!
-      </h1>
+      <h1 className="text-xl text-sky-950">Welcome to my portfolio!</h1>
     </header>
   );
 };
