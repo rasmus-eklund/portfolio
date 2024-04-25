@@ -47,7 +47,7 @@ const Article = ({ github, title, href, description, tech }: ArticleProps) => {
         </div>
       </div>
 
-      <footer className="flex items-center justify-between px-4 py-3">
+      <footer className="flex items-center justify-between border-t border-t-sky-950/10 px-4 py-3">
         {href && <AnchorTitle href={href} icon="webpage" title="Visit page" />}
         <AnchorTitle href={github} icon="code" title="Source code" />
       </footer>
