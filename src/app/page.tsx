@@ -6,7 +6,7 @@ import Projects from "@/components/projects/projects";
 import { Button } from "@/components/ui/button";
 import useScrollPosition from "@/hooks/getScrollPosition";
 import { scrollTo } from "@/lib/utils";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const Home = () => {
   const main = useRef<HTMLElement>(null);
@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <main
       ref={main}
-      className="no-scrollbar relative flex max-w-5xl grow flex-col items-center gap-6 overflow-y-auto px-2 py-16 md:gap-16"
+      className="no-scrollbar relative flex w-full max-w-5xl grow flex-col items-center gap-6 overflow-y-auto px-2 py-16 md:gap-16"
     >
       <Header />
       <Separator />
