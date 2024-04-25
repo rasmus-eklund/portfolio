@@ -74,14 +74,17 @@ const Expandable = ({ items }: { items: string[] }) => {
       {items.map((item, i) => (
         <li
           className={cn(
-            `mx-1 my-1 flex max-h-8 items-center bg-sky-300 px-2 py-1 transition-all duration-1000 ${!open && i > 3 ? "mx-0 px-0 py-0 text-[0] opacity-0" : ""}`,
+            `m-1 flex max-h-8 items-center bg-sky-300 px-2 py-1 transition-all duration-1000 ${!open && i > 3 ? "m-0 px-0 py-0 text-[0] opacity-0" : ""}`,
           )}
           key={item}
         >
           {item}
         </li>
       ))}
-      <button className="hover:scale-105" onClick={() => setOpen((p) => !p)}>
+      <button
+        className="m-1 hover:scale-105"
+        onClick={() => setOpen((p) => !p)}
+      >
         <Icon icon={open ? "minus" : "plus"} className="size-8 bg-sky-300" />
       </button>
     </ul>
