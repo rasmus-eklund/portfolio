@@ -22,18 +22,24 @@ const Bio = () => {
           <Expandable items={bioData.tech} />
         </Article>
         <Article title="Education">
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-2 text-sm md:text-base">
             {bioData.edu.map((item) => (
               <li key={item.title} className="flex items-center gap-2">
                 <Icon icon="education" className="self-start" />
                 <div className="flex w-full flex-col">
                   <div className="flex justify-between">
                     <span className="font-semibold">{item.title}</span>
-                    <span>
-                      {item.years.from === item.years.to
-                        ? item.years.from
-                        : `${item.years.from} - ${item.years.to}`}
-                    </span>
+                    <div className="flex items-center gap-1">
+                      {item.years.from === item.years.to ? (
+                        <span>{item.years.from}</span>
+                      ) : (
+                        <>
+                          <span>{item.years.from}</span>
+                          <span>&ndash;</span>
+                          <span>{item.years.to}</span>
+                        </>
+                      )}
+                    </div>
                   </div>
                   <span className="italic">{item.place}</span>
                 </div>
@@ -68,7 +74,7 @@ const Expandable = ({ items }: { items: string[] }) => {
       {items.map((item, i) => (
         <li
           className={cn(
-            `flex max-h-8 items-center mx-1 my-1 bg-sky-300 px-2 py-1 transition-all duration-1000 ${!open && i > 3 ? "text-[0] opacity-0 px-0 py-0 mx-0" : ""}`,
+            `mx-1 my-1 flex max-h-8 items-center bg-sky-300 px-2 py-1 transition-all duration-1000 ${!open && i > 3 ? "mx-0 px-0 py-0 text-[0] opacity-0" : ""}`,
           )}
           key={item}
         >
