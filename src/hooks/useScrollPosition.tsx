@@ -1,15 +1,15 @@
-'use client';
+"use client";
 import {
   Dispatch,
   RefObject,
   SetStateAction,
   useEffect,
   useState,
-} from 'react';
-import { useDebounceCallback } from 'usehooks-ts';
+} from "react";
+import { useDebounceCallback } from "usehooks-ts";
 
 const useScrollPosition = (
-  ref: RefObject<HTMLElement>
+  ref: RefObject<HTMLElement>,
 ): [number, Dispatch<SetStateAction<number>>] => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -24,8 +24,8 @@ const useScrollPosition = (
   useEffect(() => {
     const theRef = ref.current;
     if (theRef) {
-      ref.current.addEventListener('scroll', debounced);
-      return () => theRef.removeEventListener('scroll', debounced);
+      ref.current.addEventListener("scroll", debounced);
+      return () => theRef.removeEventListener("scroll", debounced);
     }
   }, [ref, debounced]);
 
