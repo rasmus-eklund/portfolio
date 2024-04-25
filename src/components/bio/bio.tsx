@@ -6,9 +6,9 @@ import Icon from "@/assets/icons";
 const Bio = () => {
   return (
     <section className="flex w-full flex-col gap-10 md:gap-20">
-      <article className="flex flex-col items-center">
+      <article className="flex flex-col gap-5 items-center">
         <h1 className="text-center text-2xl text-sky-950">About me</h1>
-        <p>
+        <p className="text-sky-950">
           {getGreeting()}, I&apos;m{" "}
           <strong className="font-semibold">Rasmus Eklund</strong>, a former
           researcher in Psychology and now Fullstack Webdeveloper.
