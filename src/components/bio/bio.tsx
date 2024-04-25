@@ -64,11 +64,11 @@ const Article = ({
 const Expandable = ({ items }: { items: string[] }) => {
   const [open, setOpen] = useState(false);
   return (
-    <ul className="flex flex-wrap gap-2">
+    <ul className="flex flex-wrap">
       {items.map((item, i) => (
         <li
           className={cn(
-            `flex h-8 items-center bg-sky-300 px-2 py-1 transition-all duration-300 ${!open && i > 3 ? "hidden" : ""}`,
+            `flex max-h-8 items-center mx-1 my-1 bg-sky-300 px-2 py-1 transition-all duration-1000 ${!open && i > 3 ? "text-[0] opacity-0 px-0 py-0 mx-0" : ""}`,
           )}
           key={item}
         >
