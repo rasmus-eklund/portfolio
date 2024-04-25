@@ -30,23 +30,23 @@ const Article = ({ github, title, href, description, tech }: ArticleProps) => {
           <Icon icon={open ? "minus" : "plus"} />
         </button>
       </header>
-      <div className="flex flex-col gap-2 p-4">
-        <p className="text-justify">
-          {open ? description : `${description.split(". ")[0]}.`}
-        </p>
-        {open && (
-          <>
-            <h2>Tech:</h2>
-            <ul className="flex flex-wrap gap-2">
-              {tech.map((i) => (
-                <li className="bg-sky-500/40 px-2 py-1" key={title + i}>
-                  {i}
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
+      <p className="px-4 text-justify">{description.split(". ")[0]}.</p>
+      <div
+        className={`grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ${open ? "grid-rows-[1fr]" : ""}`}
+      >
+        <div className="flex flex-col gap-2 overflow-hidden px-4">
+          <p>{description.split(". ").slice(1).join(". ")}</p>
+          <h2>Tech:</h2>
+          <ul className="flex flex-wrap gap-2">
+            {tech.map((i) => (
+              <li className="bg-sky-500/40 px-2 py-1" key={title + i}>
+                {i}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
+
       <footer className="flex items-center justify-between px-4 py-3">
         {href && <AnchorTitle href={href} icon="webpage" title="Visit page" />}
         <AnchorTitle href={github} icon="code" title="Source code" />
