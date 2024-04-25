@@ -6,7 +6,7 @@ import Icon from "@/assets/icons";
 const Bio = () => {
   return (
     <section className="flex w-full flex-col gap-10 md:gap-20">
-      <article className="flex flex-col gap-5 items-center">
+      <article className="flex flex-col items-center gap-5">
         <h1 className="text-center text-2xl text-sky-950">About me</h1>
         <p className="text-sky-950">
           {getGreeting()}, I&apos;m{" "}
@@ -15,13 +15,13 @@ const Bio = () => {
         </p>
       </article>
       <div className="flex flex-col gap-10 md:flex-row md:gap-20">
-        <Article title="Skills">
+        <Article title="Skills" id="skills">
           <h3 className="font-bold">Programming languages</h3>
           <Expandable items={bioData.programmingLaguages} />
           <h3 className="font-bold">Tech</h3>
           <Expandable items={bioData.tech} />
         </Article>
-        <Article title="Education">
+        <Article title="Education" id="education">
           <ul className="flex flex-col gap-2 text-sm md:text-base">
             {bioData.edu.map((item) => (
               <li key={item.title} className="flex items-center gap-2">
@@ -53,13 +53,18 @@ const Bio = () => {
 };
 
 const Article = ({
+  id,
   title,
   children,
 }: {
+  id: string;
   title: string;
   children: ReactNode;
 }) => (
-  <article className="flex flex-col rounded-b-lg rounded-t-xl bg-sky-200/20 md:w-1/2">
+  <article
+    id={id}
+    className="flex flex-col rounded-b-lg rounded-t-xl bg-sky-200/20 md:w-1/2"
+  >
     <h2 className="rounded-t-lg bg-sky-400 py-1 pl-5 text-xl text-sky-950">
       {title}
     </h2>
@@ -74,7 +79,7 @@ const Expandable = ({ items }: { items: string[] }) => {
       {items.map((item, i) => (
         <li
           className={cn(
-            `m-1 flex max-h-8 items-center bg-sky-300 hover:bg-sky-400 px-2 py-1 transition-all duration-1000 select-none ${!open && i > 2 ? "m-0 px-0 py-0 text-[0] opacity-0" : ""}`,
+            `m-1 flex max-h-8 select-none items-center bg-sky-300 px-2 py-1 transition-all duration-1000 hover:bg-sky-400 ${!open && i > 2 ? "m-0 px-0 py-0 text-[0] opacity-0" : ""}`,
           )}
           key={item}
         >
