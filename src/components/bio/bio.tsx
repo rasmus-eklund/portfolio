@@ -6,7 +6,7 @@ import Icon from "@/assets/icons";
 const Bio = () => {
   return (
     <section className="flex w-full flex-col gap-10 md:gap-20">
-      <article className="flex flex-col items-center gap-5">
+      <article className="flex flex-col items-center gap-5" id="about-me">
         <h1 className="text-center text-2xl text-sky-950">About me</h1>
         <p className="text-sky-950">
           {getGreeting()}, I&apos;m{" "}
