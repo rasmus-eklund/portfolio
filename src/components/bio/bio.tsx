@@ -74,7 +74,7 @@ const Expandable = ({ items }: { items: string[] }) => {
       {items.map((item, i) => (
         <li
           className={cn(
-            `m-1 flex max-h-8 items-center bg-sky-300 px-2 py-1 transition-all duration-1000 ${!open && i > 3 ? "m-0 px-0 py-0 text-[0] opacity-0" : ""}`,
+            `m-1 flex max-h-8 items-center bg-sky-300 px-2 py-1 transition-all duration-1000 ${!open && i > 2 ? "m-0 px-0 py-0 text-[0] opacity-0" : ""}`,
           )}
           key={item}
         >
