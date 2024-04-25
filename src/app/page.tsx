@@ -4,18 +4,17 @@ import Bio from "@/components/bio/bio";
 import Header from "@/components/header/header";
 import Projects from "@/components/projects/projects";
 import { Button } from "@/components/ui/button";
-import useScrollPosition from "@/hooks/getScrollPosition";
+import useScrollPosition from "@/hooks/useScrollPosition";
 import { scrollTo } from "@/lib/utils";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 const Home = () => {
   const main = useRef<HTMLElement>(null);
   const [scroll, setScroll] = useScrollPosition(main);
-
   return (
     <main
       ref={main}
-      className="no-scrollbar relative flex w-full max-w-5xl grow flex-col items-center gap-6 overflow-y-auto px-2 py-16 md:gap-16"
+      className="no-scrollbar relative flex w-full max-w-5xl grow flex-col items-center gap-6 overflow-y-auto scroll-smooth px-2 py-16 md:gap-16"
     >
       <Header />
       <Separator />
