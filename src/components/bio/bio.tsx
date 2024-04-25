@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { bioData } from "./bioData";
-import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
+import Icon from "@/assets/icons";
 
 const Bio = () => {
   return (
@@ -9,7 +9,7 @@ const Bio = () => {
       <article className="flex flex-col items-center">
         <h1 className="text-center text-2xl text-sky-950">About me</h1>
         <p>
-          Good day, I&apos;m{" "}
+          {getGreeting()}, I&apos;m{" "}
           <strong className="font-semibold">Rasmus Eklund</strong>, a former
           researcher in Psychology and now Fullstack Webdeveloper.
         </p>
@@ -22,11 +22,21 @@ const Bio = () => {
           <Expandable items={bioData.tech} />
         </Article>
         <Article title="Education">
-          <ul>
+          <ul className="flex flex-col gap-2">
             {bioData.edu.map((item) => (
-              <li key={item} className="flex items-center gap-1">
-                <EducationIcon className="size-6" />
-                <span>{item}</span>
+              <li key={item.title} className="flex items-center gap-2">
+                <Icon icon="education" className="self-start" />
+                <div className="flex w-full flex-col">
+                  <div className="flex justify-between">
+                    <span className="font-semibold">{item.title}</span>
+                    <span>
+                      {item.years.from === item.years.to
+                        ? item.years.from
+                        : `${item.years.from} - ${item.years.to}`}
+                    </span>
+                  </div>
+                  <span className="italic">{item.place}</span>
+                </div>
               </li>
             ))}
           </ul>
@@ -65,32 +75,23 @@ const Expandable = ({ items }: { items: string[] }) => {
           {item}
         </li>
       ))}
-      <Button
-        className="h-8"
-        variant="ghost"
-        onClick={() => setOpen((p) => !p)}
-      >
-        {open ? "show less" : "show more"}
-      </Button>
+      <button className="hover:scale-105" onClick={() => setOpen((p) => !p)}>
+        <Icon icon={open ? "minus" : "plus"} className="size-8 bg-sky-300" />
+      </button>
     </ul>
   );
 };
 
-const EducationIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth={1.5}
-    stroke="currentColor"
-    className={className}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
-    />
-  </svg>
-);
-
+const getGreeting = () => {
+  const hour = new Date().getHours();
+  if (hour >= 5 && hour < 12) {
+    return "Good morning";
+  } else if (hour >= 12 && hour < 18) {
+    return "Good afternoon";
+  } else if (hour >= 18 && hour < 22) {
+    return "Good evening";
+  } else {
+    return "Good night";
+  }
+};
 export default Bio;
