@@ -1,5 +1,14 @@
-export const projectsData = [
+export type Project = {
+  title: string;
+  github: string;
+  href: string;
+  description: string;
+  tech: string[];
+  id: string;
+};
+export const projectsData: Project[] = [
   {
+    id: "matplan",
     title: "MatPlan",
     github: "https://github.com/rasmus-eklund/MatPlanT3",
     href: "https://matplan.dev",
@@ -20,6 +29,7 @@ export const projectsData = [
     ],
   },
   {
+    id: "rica-banken",
     title: "RICA Banken",
     github: "https://github.com/rasmus-eklund/Budget",
     href: "https://pengar.vercel.app/",
@@ -38,6 +48,7 @@ export const projectsData = [
     ],
   },
   {
+    id: "onchainbet",
     title: "OnChainBet",
     github: "https://github.com/rasmus-eklund/OnChainBet",
     href: "https://onchainbet.vercel.app/",
