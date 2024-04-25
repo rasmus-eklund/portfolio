@@ -23,8 +23,8 @@ type ArticleProps = {
 const Article = ({ github, title, href, description, tech }: ArticleProps) => {
   const [open, setOpen] = useState(false);
   return (
-    <article className="flex w-full flex-col gap-2 rounded-b-lg rounded-t-xl bg-sky-400 drop-shadow-md">
-      <header className="flex justify-between rounded-t-lg bg-sky-700 px-4 py-3 text-center text-xl font-semibold text-sky-100">
+    <article className="flex w-full flex-col gap-2 rounded-b-lg rounded-t-xl bg-sky-400/40 drop-shadow-md">
+      <header className="flex justify-between rounded-t-lg bg-sky-700/60 px-4 py-3 text-center text-xl font-semibold text-sky-100">
         <h1>{title}</h1>
         <button onClick={() => setOpen((p) => !p)}>
           <Icon icon={open ? "minus" : "plus"} />
@@ -34,7 +34,7 @@ const Article = ({ github, title, href, description, tech }: ArticleProps) => {
       <div
         className={`grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ${open ? "grid-rows-[1fr]" : ""}`}
       >
-        <div className="flex flex-col gap-2 overflow-hidden px-4">
+        <div className="row-span-1 flex flex-col gap-2 overflow-hidden px-4">
           <p>{description.split(". ").slice(1).join(". ")}</p>
           <h2>Tech:</h2>
           <ul className="flex flex-wrap gap-2">
