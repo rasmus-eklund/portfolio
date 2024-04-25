@@ -1,8 +1,38 @@
-const edu = [
-  "Ph.D. Psychology",
-  "M.Sc. Cognitive Neuroscience",
-  "B.Sc. Cognitive Neuroscience",
-  "High School: Math and Computer Science",
+const edu: {
+  title: string;
+  place: string;
+  years: { from: number; to: number };
+}[] = [
+  {
+    title: "Python Developer",
+    place: "Lexicon IT Proﬀs",
+    years: { from: 2024, to: 2024 },
+  },
+  {
+    title: "Fullstack JavaScript Developer",
+    place: "</salt>",
+    years: { from: 2023, to: 2023 },
+  },
+  {
+    title: "Ph.D. Psychology",
+    place: "Stockholm University",
+    years: { from: 2016, to: 2019 },
+  },
+  {
+    title: "M.Sc. Cognitive Neuroscience",
+    place: "Maastricht University",
+    years: { from: 2012, to: 2013 },
+  },
+  {
+    title: "B.Sc. Cognitive Neuroscience",
+    place: "Högskolan i Skövde",
+    years: { from: 2009, to: 2012 },
+  },
+  {
+    title: "Math and Computer Science",
+    place: "Hultsfreds Gymnasium",
+    years: { from: 2005, to: 2008 },
+  },
 ];
 const programmingLaguages = [
   "Typescript",
