@@ -11,7 +11,7 @@ const Bio = () => {
         <p className="text-sky-950">
           {getGreeting()}, I&apos;m{" "}
           <strong className="font-semibold">Rasmus Eklund</strong>, a former
-          researcher in Psychology and now Fullstack Webdeveloper.
+          researcher in Psychology and now Fullstack Web Developer.
         </p>
       </article>
       <div className="flex flex-col gap-10 md:flex-row md:gap-20">
