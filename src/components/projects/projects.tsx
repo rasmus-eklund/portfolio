@@ -49,7 +49,7 @@ const Article = ({ github, title, href, description, tech }: ArticleProps) => {
       </div>
       <footer className="flex items-center justify-between px-4 py-3">
         {href && <AnchorTitle href={href} icon="webpage" title="Visit page" />}
-        <AnchorTitle href={github} icon="code" title="Source code" />{" "}
+        <AnchorTitle href={github} icon="code" title="Source code" />
       </footer>
     </article>
   );
@@ -57,7 +57,7 @@ const Article = ({ github, title, href, description, tech }: ArticleProps) => {
 
 type AnchorTitleProps = { title: string; href: string; icon: IconType };
 const AnchorTitle = ({ href, title, icon }: AnchorTitleProps) => (
-  <a className="flex w-fit items-center gap-1" href={href}>
+  <a className="flex w-fit items-center gap-1" href={href} target="_blank">
     <span>{title}</span>
     <Icon icon={icon} />
   </a>
