@@ -42,7 +42,7 @@ export const projectsData = [
     github: "https://github.com/rasmus-eklund/OnChainBet",
     href: "https://onchainbet.vercel.app/",
     description:
-      "OnChainBet, an Ethereum-based betting application built with Solidity smart contracts. OnChainBet allows you to place bets on the Ethereum Sepolia testnet, oﬀering both live and demo modes.",
+      "OnChainBet, an Ethereum-based betting application built with Solidity smart contracts. You can place bets on the Ethereum Sepolia testnet, oﬀering both live and demo modes.",
     tech: [
       "Next.js",
       "React",
