@@ -1,7 +1,7 @@
 import Image from "next/image";
 const Header = () => {
   return (
-    <header className="flex flex-col items-center gap-4">
+    <header id="start" className="flex flex-col items-center gap-4 pt-16">
       <Image
         className="size-48 rounded-full border-[1px] border-sky-800"
         src="https://avatars.githubusercontent.com/u/49008491?v=4"
