@@ -76,6 +76,7 @@ const tech = [
   "REST",
   "Docker",
   "Meilisearch",
+  "regex"
 ];
 
 const databases = [
