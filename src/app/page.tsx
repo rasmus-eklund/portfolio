@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <main
       ref={main}
-      className="no-scrollbar relative flex w-full max-w-5xl grow flex-col items-center gap-6 overflow-y-auto scroll-smooth px-2 pb-16 md:gap-16"
+      className="no-scrollbar relative flex w-full max-w-5xl grow flex-col items-center gap-6 overflow-y-auto scroll-smooth px-2 pb-16 md:gap-16 scroll-mt-[200px]"
     >
       <Header />
       <Separator />
