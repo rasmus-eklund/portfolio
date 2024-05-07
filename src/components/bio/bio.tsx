@@ -7,7 +7,7 @@ const Bio = () => {
   return (
     <section className="flex w-full flex-col gap-10 text-sky-950 md:gap-20">
       <article
-        className="flex scroll-mt-20 flex-col items-center gap-5"
+        className="flex scroll-mt-20 flex-col items-center gap-5 md:scroll-mt-0"
         id="about-me"
       >
         <h1 className="text-center text-2xl ">About me</h1>
@@ -66,7 +66,7 @@ const Article = ({
 }) => (
   <article
     id={id}
-    className="flex scroll-mt-20 flex-col rounded-b-lg rounded-t-xl bg-sky-200/20 md:w-1/2"
+    className="flex scroll-mt-20 flex-col rounded-b-lg rounded-t-xl bg-sky-200/20 md:w-1/2 md:scroll-mt-0"
   >
     <h2 className="rounded-t-lg bg-sky-400 py-1 pl-5 text-xl">{title}</h2>
     <div className="space-y-2 p-2">{children}</div>
