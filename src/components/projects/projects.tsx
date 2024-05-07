@@ -20,7 +20,7 @@ const Article = ({ github, title, href, description, tech, id }: Project) => {
   return (
     <article
       id={id}
-      className="flex w-full flex-col gap-2 rounded-b-lg rounded-t-xl bg-sky-400/40 drop-shadow-md"
+      className="flex w-full scroll-mt-20 flex-col gap-2 rounded-b-lg rounded-t-xl bg-sky-400/40 drop-shadow-md"
     >
       <header className="flex justify-between rounded-t-lg bg-sky-700/60 px-4 py-3 text-center text-xl font-semibold text-sky-100">
         <h1>{title}</h1>
