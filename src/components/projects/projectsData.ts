@@ -34,7 +34,7 @@ export const projectsData: Project[] = [
     github: "https://github.com/rasmus-eklund/Budget",
     href: "https://pengar.vercel.app/",
     description:
-      "At RICA Banken, you can upload your ICA Banken transactions using password encryption. You can upload transactions from multiple people and their respective accounts. The appliation will figure out transactions that are internal between the accounts. Keep track of you monthly income and expenses grouped by the categories you provide. Take a look at the demo page if you don't have data to upload.",
+      "At RICA Banken, you can upload your ICA Banken transactions using password encryption. You can upload transactions from multiple people and their respective accounts. The application will figure out transactions that are internal between the accounts. Keep track of you monthly income and expenses grouped by the categories you provide. Take a look at the demo page if you don't have data to upload.",
     tech: [
       "Next.js",
       "React",
